@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="icon" href="./public/icon.svg">
+    <script src="./scripts/script.js"></script>
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="main">
+        <div class="calculator-container" id="calculator">
+            <div class="display-container">
+                <input type="text" id="display-summary" value="0" readonly>
+                <input type="text" id="display-result" value="0" readonly>
+            </div>
+            <div class="buttons-container">
+                <div class="theme-container" onclick="switchTheme()">
+                </div>
+                <div class="operation-container" onclick="appendToResult('%')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path class="operation-color" d="M19 1L1 19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="operation-color" d="M4 7C5.65685 7 7 5.65685 7 4C7 2.34315 5.65685 1 4 1C2.34315 1 1 2.34315 1 4C1 5.65685 2.34315 7 4 7Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="operation-color" d="M16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="operation-container" onclick="appendToResult('/')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path class="operation-color" d="M10 5C11.1046 5 12 4.10457 12 3C12 1.89543 11.1046 1 10 1C8.89543 1 8 1.89543 8 3C8 4.10457 8.89543 5 10 5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="operation-color" d="M1 10H19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="operation-color" d="M10 19C11.1046 19 12 18.1046 12 17C12 15.8954 11.1046 15 10 15C8.89543 15 8 15.8954 8 17C8 18.1046 8.89543 19 10 19Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="operation-container" onclick="appendToResult('*')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path class="operation-color" d="M17 1L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="operation-color" d="M1 1L17 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="number-container" onclick="appendToResult('7')">
+                    7
+                </div>
+                <div class="number-container" onclick="appendToResult('8')">
+                    8
+                </div>
+                <div class="number-container" onclick="appendToResult('9')">
+                    9
+                </div>
+                <div class="operation-container" onclick="appendToResult('-')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="2" viewBox="0 0 20 2" fill="none">
+                        <path d="M1 1H19" class="operation-color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="number-container" onclick="appendToResult('4')">
+                    4
+                </div>
+                <div class="number-container"  onclick="appendToResult('5')">
+                    5
+                </div>
+                <div class="number-container"  onclick="appendToResult('6')">
+                    6
+                </div>
+                <div class="operation-container" onclick="appendToResult('+')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 1V19" class="operation-color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1 10H19" class="operation-color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="number-container" onclick="appendToResult('1')">
+                    1
+                </div>
+                <div class="number-container" onclick="appendToResult('2')">
+                    2
+                </div>
+                <div class="number-container" onclick="appendToResult('3')">
+                    3
+                </div>
+                <div class="result-container" onclick="getResult()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10" fill="none">
+                        <path d="M1 1H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1 9H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="ac-container" onclick="cleanResults()">
+                    AC
+                </div>
+                <div class="number-container" onclick="appendToResult('0')">
+                    0
+                </div>
+                <div class="number-container" onclick="appendToResult('.')">
+                    .
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
